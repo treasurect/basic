@@ -4,7 +4,6 @@ import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Matrix
-import com.treasure.basic.logger.CrashReport
 import java.io.File
 import java.io.FileNotFoundException
 import java.io.FileOutputStream
@@ -150,7 +149,7 @@ class ImageCompressUtil(val file: File, private val compressType: Int = TYPE_MID
         out.close()
       }
     } catch (e: FileNotFoundException) {
-      CrashReport.postException(e)
+      
       e.printStackTrace()
     } catch (e: IOException) {
       e.printStackTrace()

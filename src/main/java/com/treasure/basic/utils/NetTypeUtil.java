@@ -13,7 +13,7 @@ import java.net.NetworkInterface;
 import java.net.SocketException;
 import java.util.Enumeration;
 
-import com.treasure.basic.logger.CrashReport;
+;
 
 public class NetTypeUtil {
   /**
@@ -118,7 +118,6 @@ public class NetTypeUtil {
             }
           }
         } catch (SocketException e) {
-          CrashReport.INSTANCE.postException(e);
           e.printStackTrace();
         }
 

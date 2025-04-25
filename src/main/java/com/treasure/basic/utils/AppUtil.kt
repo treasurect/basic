@@ -17,7 +17,6 @@ import android.os.Build
 import android.os.Process
 import android.provider.Settings
 import android.text.TextUtils
-import com.treasure.basic.logger.CrashReport
 import kotlinx.coroutines.*
 
 /**
@@ -81,7 +80,7 @@ object AppUtil {
     return try {
       getAppContext().applicationInfo.flags and ApplicationInfo.FLAG_DEBUGGABLE != 0
     } catch (e: Exception) {
-      CrashReport.postException(e)
+      
       false
     }
   }
@@ -94,7 +93,7 @@ object AppUtil {
     try {
       return _context.packageManager.getApplicationLabel(_context.applicationInfo).toString()
     } catch (e: Exception) {
-      CrashReport.postException(e)
+      
     }
     return ""
   }
@@ -110,7 +109,7 @@ object AppUtil {
       val packageInfo = pm.getPackageInfo(_context.packageName, 0)
       return packageInfo.versionName
     } catch (e: PackageManager.NameNotFoundException) {
-      CrashReport.postException(e)
+      
       e.printStackTrace()
     }
     return versionName
@@ -127,7 +126,7 @@ object AppUtil {
         _context.packageManager.getPackageInfo(_context.packageName, 0).versionCode
       }
     } catch (e: Exception) {
-      CrashReport.postException(e)
+      
       e.printStackTrace()
     }
 
@@ -142,7 +141,7 @@ object AppUtil {
     var deviceName = try {
       Settings.Secure.getString(_context.contentResolver, "bluetooth_name")
     } catch (e: Exception) {
-      CrashReport.postException(e)
+      
       Build.MODEL
     }
     if (TextUtils.isEmpty(deviceName)) {

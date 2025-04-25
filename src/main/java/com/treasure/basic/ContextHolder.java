@@ -3,7 +3,7 @@ package com.treasure.basic;
 import android.app.Application;
 import android.content.Context;
 
-import com.treasure.basic.logger.CrashReport;
+;
 
 import java.lang.reflect.Method;
 
@@ -26,7 +26,6 @@ public final class ContextHolder {
                 Context context = (Context) method.invoke(null);
                 Ext.app = new MockApplication(context);
             } catch (Throwable ignored) {
-                CrashReport.INSTANCE.postException(ignored);
                 throw new RuntimeException(
                         "please invoke ContextHolder.Ext.init(app) on Application#onCreate()"
                                 + " and register your Application in manifest.");

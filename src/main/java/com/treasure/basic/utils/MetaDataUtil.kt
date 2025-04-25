@@ -2,7 +2,7 @@ package com.treasure.basic.utils
 
 import android.content.ComponentName
 import android.content.pm.PackageManager
-import com.treasure.basic.logger.CrashReport
+
 
 /**
  * Android Manifest meta-data 标签内容获取工具
@@ -19,7 +19,7 @@ object MetaDataUtil {
       val appInfo = AppUtil.getAppContext().packageManager.getApplicationInfo(AppUtil.getAppContext().packageName, PackageManager.GET_META_DATA)
       appInfo.metaData.get(key)?.toString()
     } catch (e: PackageManager.NameNotFoundException) {
-      CrashReport.postException(e)
+      
       e.printStackTrace()
       null
     }
@@ -34,7 +34,7 @@ object MetaDataUtil {
       val activityInfo = AppUtil.getAppContext().packageManager.getActivityInfo(componentName, PackageManager.GET_META_DATA)
       activityInfo.metaData.get(key)?.toString()
     } catch (e: PackageManager.NameNotFoundException) {
-      CrashReport.postException(e)
+      
       e.printStackTrace()
       null
     }
@@ -49,7 +49,7 @@ object MetaDataUtil {
       val activityInfo = AppUtil.getAppContext().packageManager.getReceiverInfo(componentName, PackageManager.GET_META_DATA)
       activityInfo.metaData.get(key)?.toString()
     } catch (e: PackageManager.NameNotFoundException) {
-      CrashReport.postException(e)
+      
       e.printStackTrace()
       null
     }
@@ -64,7 +64,7 @@ object MetaDataUtil {
       val serviceInfo = AppUtil.getAppContext().packageManager.getServiceInfo(componentName, PackageManager.GET_META_DATA)
       serviceInfo.metaData.get(key)?.toString()
     } catch (e: PackageManager.NameNotFoundException) {
-      CrashReport.postException(e)
+      
       e.printStackTrace()
       null
     }

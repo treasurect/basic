@@ -11,7 +11,7 @@ import android.graphics.BitmapFactory
 import android.os.Environment
 import android.text.TextUtils
 import android.view.View
-import com.treasure.basic.logger.CrashReport
+
 import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.FileOutputStream
@@ -44,7 +44,7 @@ object PictureUtil {
         fos.close()
       } catch (e: IOException) {
         // TODO Auto-generated catch block
-        CrashReport.postException(e)
+        
         e.printStackTrace()
         return null
       }
@@ -70,7 +70,7 @@ object PictureUtil {
       try {
         baos.close()
       } catch (e: IOException) {
-        CrashReport.postException(e)
+        
         e.printStackTrace()
       }
       dst.recycle()
@@ -109,7 +109,7 @@ object PictureUtil {
       try {
         baos.close()
       } catch (e: IOException) {
-        CrashReport.postException(e)
+        
         e.printStackTrace()
       }
       dst.recycle()
@@ -141,7 +141,7 @@ object PictureUtil {
         fos.flush()
         fos.close()
       } catch (e: IOException) {
-        CrashReport.postException(e)
+        
         e.printStackTrace()
         return null
       }
@@ -164,7 +164,6 @@ object PictureUtil {
     try {
       bitmap = BitmapFactory.decodeFile(imagePath)
     } catch (error: OutOfMemoryError) {
-      CrashReport.postException(error)
       error.printStackTrace()
     }
     if (bitmap == null) {

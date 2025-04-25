@@ -16,7 +16,6 @@ import android.provider.MediaStore
 import android.util.Size
 import com.treasure.basic.entity.BucketMediaEntity
 import com.treasure.basic.entity.ImageMediaEntity
-import com.treasure.basic.logger.CrashReport
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.io.File
@@ -50,7 +49,7 @@ object ImageMediaUtil {
         )
       }
     } catch (e: Exception) {
-      CrashReport.postException(e)
+      
       e.printStackTrace()
     }
     return@withContext null
@@ -82,7 +81,7 @@ object ImageMediaUtil {
       }
 
     } catch (e: Exception) {
-      CrashReport.postException(e)
+      
       e.printStackTrace()
     } finally {
       cursor?.close()
@@ -138,7 +137,7 @@ object ImageMediaUtil {
         }
       }
     } catch (e: Exception) {
-      CrashReport.postException(e)
+      
       e.printStackTrace()
     } finally {
       cursor?.close()
@@ -189,7 +188,7 @@ object ImageMediaUtil {
           it.flush()
         }
       } catch (e: Exception) {
-        CrashReport.postException(e)
+        
         e.printStackTrace()
         AppUtil.getAppContext().contentResolver.delete(uri, null, null)
       }
@@ -205,7 +204,7 @@ object ImageMediaUtil {
         BitmapFactory.decodeStream(it)
       }
     } catch (e: Exception) {
-      CrashReport.postException(e)
+      
       e.printStackTrace()
     }
     return@withContext null

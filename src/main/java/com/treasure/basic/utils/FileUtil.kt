@@ -14,7 +14,6 @@ import java.io.File
  */
 object FileUtil {
 
-  private val logger = LoggerFactory.getLogger(javaClass.simpleName)
   private val mContext: Context by lazy {AppUtil.getAppContext()}
   private const val SIZE_TYPE_B = 1 //文件大小单位为B
   private const val SIZE_TYPE_KB = 2 // 文件大小单位为KB

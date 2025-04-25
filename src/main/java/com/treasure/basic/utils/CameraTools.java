@@ -11,7 +11,7 @@ package com.treasure.basic.utils;
 import android.hardware.Camera;
 import android.os.Build;
 
-import com.treasure.basic.logger.CrashReport;
+;
 
 /**
  * 相机相关工具
@@ -75,7 +75,6 @@ public class CameraTools {
       mCamera = Camera.open();
       canUse = true;
     } catch (Exception ignored) {
-      CrashReport.INSTANCE.postException(ignored);
     }
     if (canUse) {
       mCamera.release();
