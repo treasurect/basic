@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ClearEditText">
+        <attr name="clearIcon" format="reference" />
+        <attr name="clearButtonMode">
+            <enum name="always" value="0" />
+            <enum name="whileEditing" value="1" />
+            <enum name="never" value="2" />
+        </attr>
+        <!-- 清除按钮的 padding -->
+        <attr name="clearIconPadding" format="dimension" />
+        <!-- 输入框的 hint 颜色 -->
+        <attr name="hintColor" format="color" />
+    </declare-styleable>
+</resources>
